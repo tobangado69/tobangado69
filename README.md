@@ -5,7 +5,7 @@
 - :smile: Pronouns: He/Him
 - Currently looking for opportunities!
 
-- [![GitHub stats](https://github-readme-stats.vercel.app/api?username=rohimjoy70)](https://github.com/rohimjoy70)
+- [![GitHub stats](https://github-readme-stats.vercel.app/api?username=tobangado69)](https://github.com/tobangado69)
 
 
 <!---
