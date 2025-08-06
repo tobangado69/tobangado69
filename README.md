@@ -1,6 +1,6 @@
 - :wave: Hi, I’m @rohim
 - :eyes: I’m interested in back-end development and front end development
-- :seedling: I’m currently learning JavaScript and TypeScript
+- :seedling: I’m currently learning JavaScript, TypeScript, Golang, Java and Python
 - :mailbox: You can reach me at rohimjoy70@gmail.com
 - :smile: Pronouns: He/Him
 - Currently looking for opportunities!
