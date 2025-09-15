@@ -9,16 +9,20 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Generate Snake
-        uses: Platane/snk@master
+        uses: Platane/snk@v2
         id: snake-gif
         with:
           github_user_name: tobangado69
-          gif_out_path: output/github-contribution-grid-snake.svg
-          svg_out_path: output/github-contribution-grid-snake.svg
+          gif_out_path: ./output/github-contribution-grid-snake.gif
+          svg_out_path: ./output/github-contribution-grid-snake.svg
 
       - name: Push to GitHub
         uses: EndBug/add-and-commit@v9
         with:
           message: 'Generate contribution snake'
-          add: 'output/github-contribution-grid-snake.svg'
+          add: 'output/github-contribution-grid-snake.*'
