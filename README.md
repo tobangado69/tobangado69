@@ -133,9 +133,9 @@ const rohim = {
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
 
 ### 🐍 Contribution Snake
-![Snake animation](https://raw.githubusercontent.com/tobangado69/tobangado69/output/github-contribution-grid-snake.svg)
+![Snake animation](https://github.com/tobangado69/tobangado69/blob/output/github-contribution-grid-snake.svg)
 
-> **Note:** The snake animation is generated automatically via GitHub Actions. It will appear once the workflow runs and you have GitHub contributions. Make sure to commit regularly to see the snake grow!
+> **Note:** The snake animation shows your GitHub contribution activity. Make sure to commit regularly to see the snake grow!
 
 ### 👀 Profile Views
 ![](https://komarev.com/ghpvc/?username=tobangado69&style=for-the-badge&color=6366f1)
