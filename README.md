@@ -133,7 +133,7 @@ const rohim = {
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
 
 ### 🐍 Contribution Snake
-![Snake animation](https://github.com/tobangado69/tobangado69/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://raw.githubusercontent.com/tobangado69/tobangado69/output/github-contribution-grid-snake.svg)
 
 > **Note:** This snake animation will appear once you have GitHub contributions. Make sure to commit regularly to see the snake grow!
 
