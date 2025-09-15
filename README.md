@@ -135,7 +135,7 @@ const rohim = {
 ### 🐍 Contribution Snake
 ![Snake animation](https://raw.githubusercontent.com/tobangado69/tobangado69/output/github-contribution-grid-snake.svg)
 
-> **Note:** This snake animation will appear once you have GitHub contributions. Make sure to commit regularly to see the snake grow!
+> **Note:** The snake animation is generated automatically via GitHub Actions. It will appear once the workflow runs and you have GitHub contributions. Make sure to commit regularly to see the snake grow!
 
 ### 👀 Profile Views
 ![](https://komarev.com/ghpvc/?username=tobangado69&style=for-the-badge&color=6366f1)
