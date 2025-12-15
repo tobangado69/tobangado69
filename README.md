@@ -35,6 +35,8 @@
 
 </div>
 
+<br clear="both"/>
+
 ## 🛠️ Tech Arsenal
 
 <div align="center">
