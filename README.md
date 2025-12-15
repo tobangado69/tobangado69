@@ -25,6 +25,15 @@
 <br clear="both"/>
 
 ---
+<div align="left">
+    <p><a href="https://www.upwork.com/freelancers/~01ed64880e8526c9c7"><img alt="Upwork @abdulrohim" align="center" src="https://img.shields.io/badge/UpWork-gray.svg?colorA=14a800&colorB=14a800&style=for-the-badge" /></a>&nbsp;<small><strong>(Hire Me)</strong> Hire via UpWork</small></p>
+    <p><a href="mailto:rohimjoy70@gmail.com"><img alt="email rohimjoy70@gmail.com" align="center" src="https://img.shields.io/badge/email-gray.svg?colorA=14a800&colorB=14a800&style=for-the-badge" /></a>&nbsp;<small><strong>(Hire & Contact Me)</strong> via Email</small></p>
+        <p><a href="https://x.com/AbdulRohim74845"><img alt="X @AbdulRohim74845" align="center" src="https://img.shields.io/badge/TWITTER-(X)-gray.svg?colorA=6A788D&colorB=3677B5&style=for-the-badge" /></a>&nbsp;<small><strong>(Social)</strong> See my Daily Dev</small></p>
+    <p><a href="https://www.youtube.com/@Tobangado70"><img alt="YouTube Tobangado" align="center" src="https://img.shields.io/badge/YOUTUBE-gray.svg?colorA=6A788D&colorB=ED2403&style=for-the-badge" /></a>&nbsp;<small><strong>(subscribe)</strong> Let's talk about DEV world and community</small></p>
+    <p><a href="https://rohimdev.com/" rel="dofollow"><img alt="Blog: rohimdev.com" align="center" src="https://img.shields.io/badge/-MY%20WEB-gray.svg?colorA=6A788D&colorB=4072FE&style=for-the-badge" /></a>&nbsp;<small><strong>(read)</strong> See my portfolio, use case, and Development</small></p>
+    <p><a href="https://www.linkedin.com/in/tobangado/"><img alt="LinkedIn @tobangado" align="center" src="https://img.shields.io/badge/LINKEDIN-gray.svg?colorA=6A788D&colorB=3677B5&style=for-the-badge" /></a>&nbsp;<small><strong>(connect)</strong> See my Profil on Linkedin</small></p>
+
+</div>
 
 ## 🛠️ Tech Arsenal
 
