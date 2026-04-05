@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - uses: actions/checkout@v4
@@ -21,6 +24,19 @@ jobs:
           ref: ${{ github.ref }}
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync to latest remote (before generating SVGs)
+        run: |
+          set -euo pipefail
+          B="${GITHUB_REF_NAME:-main}"
+          # #region agent log
+          echo "{\"sessionId\":\"62be0f\",\"hypothesisId\":\"H2\",\"location\":\"update-readme-cards:pre-sync\",\"message\":\"start\",\"data\":{\"branch\":\"$B\",\"head\":\"$(git rev-parse HEAD)\",\"ref\":\"${GITHUB_REF:-}\"},\"timestamp\":$(($(date +%s) * 1000))}"
+          # #endregion
+          git fetch origin "+refs/heads/${B}:refs/remotes/origin/${B}"
+          git reset --hard "origin/${B}"
+          # #region agent log
+          echo "{\"sessionId\":\"62be0f\",\"hypothesisId\":\"H4\",\"location\":\"update-readme-cards:post-sync\",\"message\":\"after hard reset\",\"data\":{\"head\":\"$(git rev-parse HEAD)\",\"origin\":\"$(git rev-parse "origin/${B}")\"},\"timestamp\":$(($(date +%s) * 1000))}"
+          # #endregion
 
       - name: Generate stats card
         uses: readme-tools/github-readme-stats-action@v1
@@ -56,8 +72,11 @@ jobs:
 
       - name: Commit cards
         run: |
-          set -e
-          # GITHUB_REF_NAME is set by the runner (e.g. main). Fallback avoids empty ref in edge cases.
+          set -euo pipefail
+          # #region agent log
+          echo "{\"sessionId\":\"62be0f\",\"hypothesisId\":\"H1\",\"location\":\"update-readme-cards:commit\",\"message\":\"workflow_version=v3-split-sync\",\"data\":{\"github_ref_name\":\"${GITHUB_REF_NAME:-}\",\"github_ref\":\"${GITHUB_REF:-}\"},\"timestamp\":$(($(date +%s) * 1000))}"
+          # #endregion
+
           TARGET="${GITHUB_REF_NAME:-main}"
           echo "Pushing to branch: $TARGET"
 
@@ -73,10 +92,17 @@ jobs:
 
           git commit -m "chore: update README stat cards"
 
+          # #region agent log
+          echo "{\"sessionId\":\"62be0f\",\"hypothesisId\":\"H3\",\"location\":\"update-readme-cards:pre-push\",\"message\":\"after commit\",\"data\":{\"head\":\"$(git rev-parse HEAD)\",\"origin_target\":\"$(git rev-parse "origin/${TARGET}" 2>/dev/null || echo missing)\"},\"timestamp\":$(($(date +%s) * 1000))}"
+          # #endregion
+
           for attempt in 1 2 3 4 5; do
-            git fetch origin "$TARGET"
-            git rebase "origin/$TARGET"
-            if git push origin "HEAD:refs/heads/$TARGET"; then
+            git fetch origin "+refs/heads/${TARGET}:refs/remotes/origin/${TARGET}"
+            git rebase "origin/${TARGET}"
+            # #region agent log
+            echo "{\"sessionId\":\"62be0f\",\"hypothesisId\":\"H5\",\"location\":\"update-readme-cards:push-attempt\",\"message\":\"attempt\",\"data\":{\"n\":$attempt,\"head\":\"$(git rev-parse HEAD)\",\"origin\":\"$(git rev-parse "origin/${TARGET}")\"},\"timestamp\":$(($(date +%s) * 1000))}"
+            # #endregion
+            if git push origin "HEAD:refs/heads/${TARGET}"; then
               exit 0
             fi
             echo "Push rejected (attempt $attempt/5); remote moved — fetching and rebasing again..."
