@@ -18,6 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.ref }}
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -54,23 +55,31 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit cards
-        env:
-          BRANCH: ${{ github.ref_name }}
         run: |
+          set -e
+          # GITHUB_REF_NAME is set by the runner (e.g. main). Fallback avoids empty ref in edge cases.
+          TARGET="${GITHUB_REF_NAME:-main}"
+          echo "Pushing to branch: $TARGET"
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config pull.rebase true
+
           git add profile/
           if git diff --staged --quiet; then
             echo "No SVG changes; skipping commit."
             exit 0
           fi
+
           git commit -m "chore: update README stat cards"
+
           for attempt in 1 2 3 4 5; do
-            git pull --rebase origin "$BRANCH" || exit 1
-            if git push origin "$BRANCH"; then
+            git fetch origin "$TARGET"
+            git rebase "origin/$TARGET"
+            if git push origin "HEAD:refs/heads/$TARGET"; then
               exit 0
             fi
-            echo "Push rejected (attempt $attempt/5); another job may have updated main — retrying..."
+            echo "Push rejected (attempt $attempt/5); remote moved — fetching and rebasing again..."
             sleep $((attempt * 5))
           done
           echo "Push failed after 5 attempts"
