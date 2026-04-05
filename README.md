@@ -82,8 +82,6 @@
   <img height="180em" alt="Top languages" src="./profile/top-langs.svg" />
 </div>
 
-<p align="center"><sub>Cards update daily. If they are missing, open <strong>Actions → Update README cards → Run workflow</strong>.</sub></p>
-
 <div align="center">
   <img alt="GitHub streak" src="https://streak-stats.demolab.com/?user=tobangado69&theme=tokyonight&hide_border=true" />
 </div>
@@ -100,7 +98,6 @@
   <img alt="GitHub profile trophies" src="https://github-profile-trophy.vercel.app/?username=tobangado69&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" />
 </div>
 
-<p align="center"><sub>If trophies do not load, the third-party host may be rate-limited—refresh later or check <a href="https://github.com/ryo-ma/github-profile-trophy">github-profile-trophy</a> for status.</sub></p>
 
 ---
 
@@ -150,25 +147,10 @@ const rohim = {
 ### 🐍 Contribution Snake
 ![Snake animation](https://raw.githubusercontent.com/tobangado69/tobangado69/main/output/github-contribution-grid-snake.svg)
 
-> **Note:** The snake SVG is produced by `.github/workflows/snake.yml` and saved under `output/` on your **default branch** (`main`). The URL must include the branch name (`main/output/...`); using only `output/...` points GitHub at a branch named `output`, so the image breaks. If the snake is missing, run **Actions → Generate Snake → Run workflow**.
-
 ### 👀 Profile Views
 ![](https://komarev.com/ghpvc/?username=tobangado69&style=for-the-badge&color=6366f1)
 
 </div>
-
----
-
-## 🔧 Keeping this profile working
-
-This repo is your GitHub profile README (`tobangado69/tobangado69`). Third-party image hosts (especially the old `github-readme-stats.vercel.app` app) often stop working; stats and pin cards are generated into `profile/` by **Actions → Update README cards** so they do not depend on that host.
-
-| What | Workflow | When |
-|------|----------|------|
-| Stats, languages, featured pins | [Update README cards](.github/workflows/update-readme-cards.yml) | Daily (~02:00 UTC) or run manually |
-| Contribution snake | [Generate Snake](.github/workflows/snake.yml) | Daily (midnight UTC) or run manually |
-
-After your first push with these workflows, open [Actions](https://github.com/tobangado69/tobangado69/actions) and run both workflows once so `profile/*.svg` and `output/github-contribution-grid-snake.svg` are committed.
 
 ---
 

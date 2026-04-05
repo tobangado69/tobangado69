@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: snake-${{ github.repository }}
+  group: profile-content-${{ github.repository }}
   cancel-in-progress: false
 
 jobs:

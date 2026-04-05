@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: readme-cards-${{ github.repository }}
+  group: profile-content-${{ github.repository }}
   cancel-in-progress: false
 
 jobs:
@@ -57,9 +57,6 @@ jobs:
         env:
           BRANCH: ${{ github.ref_name }}
         run: |
-          # #region agent log
-          echo "{\"sessionId\":\"62be0f\",\"hypothesisId\":\"H1\",\"location\":\"update-readme-cards.yml:commit\",\"message\":\"pre-commit\",\"data\":{\"head\":\"$(git rev-parse HEAD)\",\"branch\":\"$BRANCH\"},\"timestamp\":$(($(date +%s) * 1000))}"
-          # #endregion
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add profile/
@@ -68,11 +65,13 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update README stat cards"
-          # #region agent log
-          echo "{\"sessionId\":\"62be0f\",\"hypothesisId\":\"H1\",\"location\":\"update-readme-cards.yml:pre-rebase\",\"message\":\"before pull --rebase\",\"data\":{\"head\":\"$(git rev-parse HEAD)\"},\"timestamp\":$(($(date +%s) * 1000))}"
-          # #endregion
-          git pull --rebase origin "$BRANCH"
-          # #region agent log
-          echo "{\"sessionId\":\"62be0f\",\"hypothesisId\":\"H1\",\"location\":\"update-readme-cards.yml:post-rebase\",\"message\":\"after pull --rebase\",\"data\":{\"head\":\"$(git rev-parse HEAD)\"},\"timestamp\":$(($(date +%s) * 1000))}"
-          # #endregion
-          git push origin "$BRANCH"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin "$BRANCH" || exit 1
+            if git push origin "$BRANCH"; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt/5); another job may have updated main — retrying..."
+            sleep $((attempt * 5))
+          done
+          echo "Push failed after 5 attempts"
+          exit 1
