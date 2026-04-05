@@ -95,7 +95,7 @@
 ## 🏆 GitHub Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=tobangado69&theme=tokyonight&no-frame=true&no-bg=false&margin-w=4&row=1" />
+  <img src="https://github-profile-trophy.vercel.app/?username=tobangado69&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" />
 </div>
 
 ---
@@ -118,8 +118,8 @@ const rohim = {
 
 <div align="center">
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=tobangado69&repo=Mobile-FB&theme=tokyonight&hide_border=true)](https://github.com/tobangado69/Mobile-FB)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=tobangado69&repo=Grammedia-Clone&theme=tokyonight&hide_border=true)](https://github.com/tobangado69/Grammedia-Clone)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=tobangado69&repo=detect-price-by-photo&theme=tokyonight&hide_border=true)](https://github.com/tobangado69/detect-price-by-photo)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=tobangado69&repo=InboxIq&theme=tokyonight&hide_border=true)](https://github.com/tobangado69/InboxIq)
 
 </div>
 
