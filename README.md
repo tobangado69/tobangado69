@@ -78,16 +78,18 @@
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=tobangado69&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tobangado69&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
+  <img height="180em" alt="GitHub stats" src="./profile/stats.svg" />
+  <img height="180em" alt="Top languages" src="./profile/top-langs.svg" />
+</div>
+
+<p align="center"><sub>Cards update daily. If they are missing, open <strong>Actions → Update README cards → Run workflow</strong>.</sub></p>
+
+<div align="center">
+  <img alt="GitHub streak" src="https://streak-stats.demolab.com/?user=tobangado69&theme=tokyonight&hide_border=true" />
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=tobangado69&theme=tokyonight&hide_border=true" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=tobangado69&theme=tokyo-night&hide_border=true&area=true" />
+  <img alt="Contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=tobangado69&theme=tokyo-night&hide_border=true&area=true" />
 </div>
 
 ---
@@ -95,8 +97,10 @@
 ## 🏆 GitHub Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=tobangado69&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" />
+  <img alt="GitHub profile trophies" src="https://github-profile-trophy.vercel.app/?username=tobangado69&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" />
 </div>
+
+<p align="center"><sub>If trophies do not load, the third-party host may be rate-limited—refresh later or check <a href="https://github.com/ryo-ma/github-profile-trophy">github-profile-trophy</a> for status.</sub></p>
 
 ---
 
@@ -118,8 +122,8 @@ const rohim = {
 
 <div align="center">
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=tobangado69&repo=detect-price-by-photo&theme=tokyonight&hide_border=true)](https://github.com/tobangado69/detect-price-by-photo)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=tobangado69&repo=InboxIq&theme=tokyonight&hide_border=true)](https://github.com/tobangado69/InboxIq)
+[![detect-price-by-photo](./profile/pin-detect-price-by-photo.svg)](https://github.com/tobangado69/detect-price-by-photo)
+[![InboxIq](./profile/pin-InboxIq.svg)](https://github.com/tobangado69/InboxIq)
 
 </div>
 
@@ -144,14 +148,27 @@ const rohim = {
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
 
 ### 🐍 Contribution Snake
-![Snake animation](https://raw.githubusercontent.com/tobangado69/tobangado69/output/github-contribution-grid-snake.svg)
+![Snake animation](https://raw.githubusercontent.com/tobangado69/tobangado69/main/output/github-contribution-grid-snake.svg)
 
-> **Note:** The snake animation shows your GitHub contribution activity. Make sure to commit regularly to see the snake grow!
+> **Note:** The snake SVG is produced by `.github/workflows/snake.yml` and saved under `output/` on your **default branch** (`main`). The URL must include the branch name (`main/output/...`); using only `output/...` points GitHub at a branch named `output`, so the image breaks. If the snake is missing, run **Actions → Generate Snake → Run workflow**.
 
 ### 👀 Profile Views
 ![](https://komarev.com/ghpvc/?username=tobangado69&style=for-the-badge&color=6366f1)
 
 </div>
+
+---
+
+## 🔧 Keeping this profile working
+
+This repo is your GitHub profile README (`tobangado69/tobangado69`). Third-party image hosts (especially the old `github-readme-stats.vercel.app` app) often stop working; stats and pin cards are generated into `profile/` by **Actions → Update README cards** so they do not depend on that host.
+
+| What | Workflow | When |
+|------|----------|------|
+| Stats, languages, featured pins | [Update README cards](.github/workflows/update-readme-cards.yml) | Daily (~02:00 UTC) or run manually |
+| Contribution snake | [Generate Snake](.github/workflows/snake.yml) | Daily (midnight UTC) or run manually |
+
+After your first push with these workflows, open [Actions](https://github.com/tobangado69/tobangado69/actions) and run both workflows once so `profile/*.svg` and `output/github-contribution-grid-snake.svg` are committed.
 
 ---
 
