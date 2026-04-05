@@ -1,3 +1,5 @@
+# Re-running an OLD failed job reuses the workflow YAML from THAT commit — not latest main.
+# To test fixes: Actions → Update README cards → "Run workflow" (new run), do not "Re-run" an old run.
 name: Update README cards
 
 on:
@@ -19,6 +21,11 @@ jobs:
         shell: bash
 
     steps:
+      - name: Workflow revision (which commit is this run using?)
+        run: |
+          echo "DEBUG_WORKFLOW_CONTEXT sha=${{ github.sha }} ref=${{ github.ref }} ref_name=${{ github.ref_name }}"
+          echo "If you clicked Re-run on an old failed job, this SHA is OLD — use Run workflow for latest main."
+
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
