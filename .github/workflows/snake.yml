@@ -37,4 +37,3 @@ jobs:
         with:
           message: 'Generate contribution snake'
           add: 'output/github-contribution-grid-snake.*'
-          pull: '--rebase'
