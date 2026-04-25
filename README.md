@@ -145,7 +145,10 @@ const rohim = {
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
 
 ### 🐍 Contribution Snake
-![Snake animation](https://raw.githubusercontent.com/tobangado69/tobangado69/main/output/github-contribution-grid-snake.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tobangado69/tobangado69/output/github-contribution-grid-snake-dark.svg" />
+  <img alt="Snake animation" src="https://raw.githubusercontent.com/tobangado69/tobangado69/output/github-contribution-grid-snake.svg" />
+</picture>
 
 ### 👀 Profile Views
 ![](https://komarev.com/ghpvc/?username=tobangado69&style=for-the-badge&color=6366f1)
