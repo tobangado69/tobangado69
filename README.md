@@ -78,16 +78,16 @@
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img height="180em" alt="GitHub stats" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/stats.svg?v=99" />
-  <img height="180em" alt="Top languages" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/top-langs.svg?v=99" />
+  <img height="180em" alt="GitHub stats" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/stats.svg?v=69" />
+  <img height="180em" alt="Top languages" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/top-langs.svg?v=69" />
 </div>
 
 <div align="center">
-  <img alt="GitHub streak" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/streak.svg?v=99" />
+  <img alt="GitHub streak" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/streak.svg?v=69" />
 </div>
 
 <div align="center">
-  <img alt="Contribution activity graph" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/activity-graph.svg?v=99" />
+  <img alt="Contribution activity graph" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/activity-graph.svg?v=69" />
 </div>
 
 ---
@@ -145,7 +145,7 @@ const rohim = {
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
 
 ### 🐍 Contribution Snake
-<img alt="Snake animation" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/github-contribution-grid-snake-dark.svg?v=99" />
+<img alt="Snake animation" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/github-contribution-grid-snake-dark.svg?v=69" />
 
 ### 👀 Profile Views
 ![](https://komarev.com/ghpvc/?username=tobangado69&style=for-the-badge&color=6366f1)
