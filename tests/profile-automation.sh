@@ -4,6 +4,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SCRIPT="${ROOT}/scripts/sync-profile-assets.sh"
+WORKFLOW="${ROOT}/.github/workflows/update-readme-cards.yml"
 TMP_DIR="$(mktemp -d)"
 trap 'rm -rf "${TMP_DIR}"' EXIT
 
@@ -48,3 +49,8 @@ if PROFILE_REPOSITORY="example/repo" PROFILE_CACHE_BUST="9001" bash "${SCRIPT}" 
 fi
 
 echo "profile automation checks passed"
+
+grep -q "count_private=true" "${WORKFLOW}"
+grep -q "GH_STATS_TOKEN" "${WORKFLOW}"
+
+echo "workflow stats options checks passed"
