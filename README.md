@@ -83,11 +83,11 @@
 </div>
 
 <div align="center">
-  <img alt="GitHub streak" src="https://streak-stats.demolab.com/?user=tobangado69&theme=tokyonight&hide_border=true" />
+  <img alt="GitHub streak" src="./profile/streak.svg" />
 </div>
 
 <div align="center">
-  <img alt="Contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=tobangado69&theme=tokyo-night&hide_border=true&area=true" />
+  <img alt="Contribution activity graph" src="./profile/activity-graph.svg" />
 </div>
 
 ---
@@ -146,8 +146,8 @@ const rohim = {
 
 ### 🐍 Contribution Snake
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tobangado69/tobangado69/output/github-contribution-grid-snake-dark.svg" />
-  <img alt="Snake animation" src="https://raw.githubusercontent.com/tobangado69/tobangado69/output/github-contribution-grid-snake.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="./profile/github-contribution-grid-snake-dark.svg" />
+  <img alt="Snake animation" src="./profile/github-contribution-grid-snake.svg" />
 </picture>
 
 ### 👀 Profile Views

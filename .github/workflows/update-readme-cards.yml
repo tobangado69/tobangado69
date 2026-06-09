@@ -1,11 +1,13 @@
-# Re-running an OLD failed job reuses the workflow YAML from THAT commit — not latest main.
-# To test fixes: Actions → Update README cards → "Run workflow" (new run), do not "Re-run" an old run.
 name: Update README cards
 
 on:
   schedule:
     - cron: "0 2 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "profile/**"
 
 concurrency:
   group: profile-content-${{ github.repository }}
@@ -21,11 +23,6 @@ jobs:
         shell: bash
 
     steps:
-      - name: Workflow revision (which commit is this run using?)
-        run: |
-          echo "DEBUG_WORKFLOW_CONTEXT sha=${{ github.sha }} ref=${{ github.ref }} ref_name=${{ github.ref_name }}"
-          echo "If you clicked Re-run on an old failed job, this SHA is OLD — use Run workflow for latest main."
-
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
@@ -36,7 +33,6 @@ jobs:
         run: |
           set -euo pipefail
           B="${GITHUB_REF_NAME:-main}"
-          echo "DEBUG_STEP=sync_before_generate branch=${B}"
           git fetch origin "+refs/heads/${B}:refs/remotes/origin/${B}"
           git reset --hard "origin/${B}"
 
@@ -56,6 +52,20 @@ jobs:
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Generate streak card
+        uses: DenverCoder1/github-readme-streak-stats@main
+        with:
+          options: "user=${{ github.repository_owner }}&theme=tokyonight&hide_border=true&disable_animations=true"
+          path: profile/streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate activity graph
+        run: |
+          set -euo pipefail
+          curl -fsSL \
+            "https://github-readme-activity-graph.vercel.app/graph?username=${{ github.repository_owner }}&theme=tokyo-night&hide_border=true&area=true" \
+            -o profile/activity-graph.svg
+
       - name: Generate pin — detect-price-by-photo
         uses: readme-tools/github-readme-stats-action@v1
         with:
@@ -72,11 +82,18 @@ jobs:
           path: profile/pin-InboxIq.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Generate snake svg
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            profile/github-contribution-grid-snake.svg
+            profile/github-contribution-grid-snake-dark.svg?palette=github-dark
+
       - name: Commit SVGs (no push)
         id: commit_svgs
         run: |
           set -euo pipefail
-          echo "DEBUG_STEP=commit_only_v2"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add profile/
@@ -93,7 +110,6 @@ jobs:
         run: |
           set -euo pipefail
           TARGET="${GITHUB_REF_NAME:-main}"
-          echo "DEBUG_STEP=push_rebase_v2 branch=${TARGET}"
 
           for attempt in 1 2 3 4 5; do
             git fetch origin "+refs/heads/${TARGET}:refs/remotes/origin/${TARGET}"
