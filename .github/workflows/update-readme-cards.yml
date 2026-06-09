@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths-ignore:
       - "profile/**"
+      - "README.md"
 
 concurrency:
   group: profile-content-${{ github.repository }}
@@ -90,13 +91,19 @@ jobs:
             profile/github-contribution-grid-snake.svg
             profile/github-contribution-grid-snake-dark.svg?palette=github-dark
 
+      - name: Bust README image cache
+        run: |
+          set -euo pipefail
+          BUST="${GITHUB_RUN_NUMBER}"
+          perl -pi -e 's|(raw\.githubusercontent\.com/tobangado69/tobangado69/main/profile/[^"?]+)(\?v=\d+)?|$1?v='"${BUST}"'|g' README.md
+
       - name: Commit SVGs (no push)
         id: commit_svgs
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/
+          git add profile/ README.md
           if git diff --staged --quiet; then
             echo "No SVG changes; skipping commit."
             echo "has_commit=false" >> "$GITHUB_OUTPUT"
