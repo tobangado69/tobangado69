@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="120" viewBox="0 0 720 120" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub profile trophies unavailable</title>
+  <desc id="desc">Cached fallback rendered because trophy endpoints were unavailable.</desc>
+  <rect width="720" height="120" rx="16" fill="#1a1b27"/>
+  <text x="36" y="52" fill="#e5e9f0" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">GitHub Trophies temporarily unavailable</text>
+  <text x="36" y="84" fill="#8fbcbb" font-family="Segoe UI, Arial, sans-serif" font-size="20">Profile trophies will refresh automatically when the endpoint recovers.</text>
+</svg>
