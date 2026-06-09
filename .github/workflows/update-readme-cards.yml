@@ -63,7 +63,7 @@ jobs:
       - name: Generate activity graph
         run: |
           set -euo pipefail
-          curl -fsSL \
+          curl -fsSL --retry 5 --retry-all-errors --connect-timeout 10 \
             "https://github-readme-activity-graph.vercel.app/graph?username=${{ github.repository_owner }}&theme=tokyo-night&hide_border=true&area=true" \
             -o profile/activity-graph.svg
 
@@ -91,11 +91,15 @@ jobs:
             profile/github-contribution-grid-snake.svg
             profile/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - name: Bust README image cache
+      - name: Verify profile automation helper
+        run: bash tests/profile-automation.sh
+
+      - name: Validate profile assets and refresh README image URLs
         run: |
           set -euo pipefail
-          BUST="${GITHUB_RUN_NUMBER}"
-          perl -pi -e 's|(raw\.githubusercontent\.com/tobangado69/tobangado69/main/profile/[^"?]+)(\?v=\d+)?|$1?v='"${BUST}"'|g' README.md
+          PROFILE_REPOSITORY="${GITHUB_REPOSITORY}" \
+          PROFILE_CACHE_BUST="${GITHUB_RUN_NUMBER}" \
+          bash scripts/sync-profile-assets.sh .
 
       - name: Commit SVGs (no push)
         id: commit_svgs
