@@ -78,8 +78,8 @@
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img height="180em" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=tobangado69&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github" />
-  <img height="180em" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tobangado69&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&count_private=true" />
+  <img height="180em" alt="GitHub stats" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/stats.svg?v=1" />
+  <img height="180em" alt="Top languages" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/top-langs.svg?v=1" />
 </div>
 
 <div align="center">
