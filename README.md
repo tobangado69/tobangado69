@@ -95,7 +95,7 @@
 ## 🏆 GitHub Trophies
 
 <div align="center">
-  <img alt="GitHub profile trophies" src="https://github-profile-trophy.vercel.app/?username=tobangado69&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" />
+  <img alt="GitHub profile trophies" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/trophies.svg?v=70" />
 </div>
 
 

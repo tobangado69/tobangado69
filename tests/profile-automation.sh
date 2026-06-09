@@ -18,7 +18,8 @@ for asset in \
   pin-detect-price-by-photo.svg \
   stats.svg \
   streak.svg \
-  top-langs.svg
+  top-langs.svg \
+  trophies.svg
 do
   printf '<svg>%s</svg>\n' "${asset}" > "${TMP_DIR}/profile/${asset}"
 done
@@ -29,6 +30,7 @@ cat > "${TMP_DIR}/README.md" <<'EOF'
 <img src="https://raw.githubusercontent.com/example/repo/main/profile/streak.svg?v=99" />
 <img src="https://raw.githubusercontent.com/example/repo/main/profile/activity-graph.svg?v=99" />
 <img src="https://raw.githubusercontent.com/example/repo/main/profile/github-contribution-grid-snake-dark.svg?v=99" />
+<img src="https://raw.githubusercontent.com/example/repo/main/profile/trophies.svg?v=99" />
 EOF
 
 PROFILE_REPOSITORY="example/repo" \
@@ -40,6 +42,7 @@ grep -q 'top-langs.svg?v=4242' "${TMP_DIR}/README.md"
 grep -q 'streak.svg?v=4242' "${TMP_DIR}/README.md"
 grep -q 'activity-graph.svg?v=4242' "${TMP_DIR}/README.md"
 grep -q 'github-contribution-grid-snake-dark.svg?v=4242' "${TMP_DIR}/README.md"
+grep -q 'trophies.svg?v=4242' "${TMP_DIR}/README.md"
 
 rm "${TMP_DIR}/profile/streak.svg"
 

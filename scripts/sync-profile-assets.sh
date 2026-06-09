@@ -30,6 +30,7 @@ required_assets=(
   stats.svg
   streak.svg
   top-langs.svg
+  trophies.svg
 )
 
 for asset in "${required_assets[@]}"; do
@@ -50,4 +51,3 @@ perl -0pi -e '
     "https://raw.githubusercontent.com/$ENV{PROFILE_REPOSITORY}/main/profile/$1?v=$ENV{PROFILE_CACHE_BUST}"
   }gex
 ' "${README_PATH}"
-
