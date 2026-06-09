@@ -72,21 +72,10 @@ jobs:
       - name: Generate trophies card
         run: |
           set -euo pipefail
-          TROPHY_PATH="profile/trophies.svg"
-          URL_SUFFIX="/?username=${{ github.repository_owner }}&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4"
-
-          for base_url in \
-            "https://github-profile-trophy.vercel.app" \
-            "https://github-profile-trophy-liard-delta.vercel.app" \
-            "https://trophy.ryglcloud.net"
-          do
-            if curl -fsSL --retry 3 --retry-all-errors --connect-timeout 10 "${base_url}${URL_SUFFIX}" -o "${TROPHY_PATH}" && grep -q "<svg" "${TROPHY_PATH}"; then
-              exit 0
-            fi
-          done
-
-          echo "Failed to generate trophies.svg from all configured endpoints" >&2
-          exit 1
+          TROPHY_USERNAME="${{ github.repository_owner }}" \
+          TROPHY_THEME="tokyonight" \
+          TROPHY_MARGIN_W="4" \
+          bash scripts/refresh-trophies.sh .
 
       - name: Generate pin — detect-price-by-photo
         uses: readme-tools/github-readme-stats-action@v1
@@ -113,7 +102,9 @@ jobs:
             profile/github-contribution-grid-snake-dark.svg?palette=github-dark
 
       - name: Verify profile automation helper
-        run: bash tests/profile-automation.sh
+        run: |
+          bash tests/trophies-refresh.sh
+          bash tests/profile-automation.sh
 
       - name: Validate profile assets and refresh README image URLs
         run: |
