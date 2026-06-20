@@ -32,10 +32,17 @@ EOF
 
 url_suffix="/?username=${USERNAME}&theme=${THEME}&no-frame=true&no-bg=true&margin-w=${MARGIN_W}"
 
-for base_url in \
-  "https://github-profile-trophy.vercel.app" \
-  "https://github-profile-trophy-liard-delta.vercel.app" \
-  "https://trophy.ryglcloud.net"
+if [[ -n "${TROPHY_ENDPOINTS:-}" ]]; then
+  read -r -a trophy_endpoints <<< "${TROPHY_ENDPOINTS}"
+else
+  trophy_endpoints=(
+    "https://github-profile-trophy.vercel.app"
+    "https://github-profile-trophy-liard-delta.vercel.app"
+    "https://trophy.ryglcloud.net"
+  )
+fi
+
+for base_url in "${trophy_endpoints[@]}"
 do
   if curl -fsSL --retry 3 --retry-all-errors --connect-timeout 10 "${base_url}${url_suffix}" -o "${tmp_file}" && grep -q "<svg" "${tmp_file}"; then
     mv "${tmp_file}" "${TROPHY_PATH}"
