@@ -61,11 +61,12 @@ jobs:
           token: ${{ secrets.GH_STATS_TOKEN }}
 
       - name: Generate activity graph
-        run: |
-          set -euo pipefail
-          curl -fsSL --retry 5 --retry-all-errors --connect-timeout 10 \
-            "https://github-readme-activity-graph.vercel.app/graph?username=${{ github.repository_owner }}&theme=tokyo-night&hide_border=true&area=true" \
-            -o profile/activity-graph.svg
+        uses: maurodesouza/github-readme-activity-graph-action@v1
+        with:
+          username: ${{ github.repository_owner }}
+          options: "theme=tokyo-night&hide_border=true&area=true"
+          output_path: profile/activity-graph.svg
+          token: ${{ secrets.GH_STATS_TOKEN }}
 
       - name: Generate trophies card
         run: |

@@ -55,5 +55,10 @@ echo "profile automation checks passed"
 
 grep -q "count_private=true" "${WORKFLOW}"
 grep -q "GH_STATS_TOKEN" "${WORKFLOW}"
+grep -q "maurodesouza/github-readme-activity-graph-action@" "${WORKFLOW}"
+if grep -q "github-readme-activity-graph.vercel.app" "${WORKFLOW}"; then
+  echo "activity graph must be generated in CI, not via the public Vercel endpoint (HTTP 402)" >&2
+  exit 1
+fi
 
 echo "workflow stats options checks passed"
