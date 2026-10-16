@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Abdul Rohim's GitHub Stats, Rank: B+</title>
-        <desc id="descId">Total Stars Earned: 1, Total Commits  : 3772, Total PRs: 555, Total Issues: 715, Contributed to (last year): 4</desc>
+        <desc id="descId">Total Stars Earned: 1, Total Commits  : 3776, Total PRs: 560, Total Issues: 747, Contributed to (last year): 4</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 96.2511995124303;
+        stroke-dashoffset: 96.24079294978081;
       }
     }
   
@@ -192,7 +192,7 @@
         x="219.01"
         y="12.5"
         data-testid="prs"
-      >555</text>
+      >560</text>
     </g>
   </g><g transform="translate(0, 75)">
     <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
@@ -207,7 +207,7 @@
         x="219.01"
         y="12.5"
         data-testid="issues"
-      >715</text>
+      >747</text>
     </g>
   </g><g transform="translate(0, 100)">
     <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
