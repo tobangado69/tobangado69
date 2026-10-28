@@ -78,16 +78,16 @@
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img height="180em" alt="GitHub stats" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/stats.svg?v=219" />
-  <img height="180em" alt="Top languages" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/top-langs.svg?v=219" />
+  <img height="180em" alt="GitHub stats" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/stats.svg?v=220" />
+  <img height="180em" alt="Top languages" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/top-langs.svg?v=220" />
 </div>
 
 <div align="center">
-  <img alt="GitHub streak" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/streak.svg?v=219" />
+  <img alt="GitHub streak" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/streak.svg?v=220" />
 </div>
 
 <div align="center">
-  <img alt="Contribution activity graph" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/activity-graph.svg?v=219" />
+  <img alt="Contribution activity graph" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/activity-graph.svg?v=220" />
 </div>
 
 ---
@@ -95,7 +95,7 @@
 ## 🏆 GitHub Trophies
 
 <div align="center">
-  <img alt="GitHub profile trophies" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/trophies.svg?v=219" />
+  <img alt="GitHub profile trophies" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/trophies.svg?v=220" />
 </div>
 
 
@@ -145,7 +145,7 @@ const rohim = {
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
 
 ### 🐍 Contribution Snake
-<img alt="Snake animation" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/github-contribution-grid-snake-dark.svg?v=219" />
+<img alt="Snake animation" src="https://raw.githubusercontent.com/tobangado69/tobangado69/main/profile/github-contribution-grid-snake-dark.svg?v=220" />
 
 ### 👀 Profile Views
 ![](https://komarev.com/ghpvc/?username=tobangado69&style=for-the-badge&color=6366f1)
